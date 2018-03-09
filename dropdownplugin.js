@@ -1,3 +1,22 @@
+/* 
+# CODER: MAKA EDWARDS #
+# VERSION: 1.0 #
+# INCLUDE THIS IN YOUR HTML FILE:
+        <div id="menu_container">
+            <div id="drop_down" class="dropper">
+                <div id="head"><p id="text"><!-- INSERT MENU HEADER !-->LANDMARKS</p></div>
+                <ul id="dropper">   
+                    <!-- INSERT MENU ITEMS HERE !-->
+                    <li class="dropper">Space Center</li>
+                    <li class="dropper">Everglades</li>
+                    <li class="dropper">Disney World</li>
+                    <li class="dropper">Miami</li>
+                    <li class="dropper">Tampa</li>
+                </ul>
+            </div>
+        </div>
+# CODER: MAKA EDWARDS #
+*/
 $(document).ready(function(){
 var bod = $(document);
 var container = $("#menu_container");
