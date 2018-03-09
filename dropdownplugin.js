@@ -61,6 +61,7 @@ var el = drop.children();
            'background-color':'cornflowerblue' 
        });
        head.css({
+           'top':'10',
            'z-index':'1',
            'position':'relative',
            'width': main.width(),
