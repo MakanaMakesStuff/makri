@@ -50,6 +50,7 @@ var el = drop.children();
        $('.dropper').css({
            'position':'absolute',
            'width':'120px',
+           'top':'10',
            'height':'30px',
            'background-color':'#4e4e4e',
            'line-height':'200%',
