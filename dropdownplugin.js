@@ -126,5 +126,8 @@ var el = drop.children();
             });
         }
     })();
-        CenterGlobal(container);
+        
+});
+$(window).resize(function(){
+        CenterGlobal($("#menu_container"));
 });
