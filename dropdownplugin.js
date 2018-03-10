@@ -121,6 +121,4 @@ var el = drop.children();
             });
         }
     })();
-    
-     AlignHorizontal(bod, container);
 });
