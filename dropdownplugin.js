@@ -17,15 +17,6 @@
         </div>
 # CODER: MAKA EDWARDS #
 */
-/* function AlignHorizontalGlobal(target, obj){
-        var width = target.width();
-        var myWidth = obj.width();
-        var posX = (width/2) - myWidth/2;
-        obj.css({
-           'left': posX
-        });
-    } 
-    */
 $(document).ready(function(){
 var bod = $(document);
 var container = $("#menu_container");
@@ -84,15 +75,6 @@ var el = drop.children();
            'color':'white'
        });
    })();
-   /* function AlignHorizontal(target, obj){
-        var width = target.width();
-        var myWidth = obj.width();
-        var posX = (width/2) - myWidth/2;
-        obj.css({
-           'left': posX
-        });
-    }
-    */
     (function ButtonAnimation(){
          $(head).mouseenter(
             function(){
@@ -100,7 +82,6 @@ var el = drop.children();
                    $(this).transition({
                       y: 30 * index
                    });
-                    
                 });
                 $(this).css({
                    'background-color' : 'darkgray' 
@@ -143,8 +124,3 @@ var el = drop.children();
     
      AlignHorizontal(bod, container);
 });
-/*
-$(window).resize(function(){
-    AlignHorizontalGlobal($(document), $("#menu_container"));
-});
-*/
