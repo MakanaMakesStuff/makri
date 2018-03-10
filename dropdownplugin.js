@@ -18,6 +18,11 @@
 # CODER: MAKA EDWARDS #
 */
 $(document).ready(function(){
+      if(window.screen.width < 768){
+            $(".button").css({
+               'width':'200px'
+            });
+        }
 var bod = $(document);
 var container = $("#menu_container");
 var main = $("#drop_down");
@@ -129,5 +134,10 @@ var el = drop.children();
         
 });
 $(window).resize(function(){
+       if(window.screen.width < 768){
+            $(".button").css({
+               'width':'200px'
+            });
+        }
         CenterGlobal($("#menu_container"));
 });
