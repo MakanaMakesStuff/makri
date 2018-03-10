@@ -25,7 +25,12 @@ var drop = $("#dropper");
 var head = $("#head");
 var text = $("#text");
 var el = drop.children();
-    
+   function CenterGlobal(obj){
+        var pos = ($(document).width()/2) - (obj.width()/2);
+        obj.css({
+            'left': pos
+        });
+    }
                 $('li').each(function(index){
                    $(this).transition({
                       y: -30
@@ -121,4 +126,5 @@ var el = drop.children();
             });
         }
     })();
+        CenterGlobal(container);
 });
