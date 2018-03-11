@@ -18,11 +18,6 @@
 # CODER: MAKA EDWARDS #
 */
 $(document).ready(function(){
-      if(window.screen.width < 768){
-            $(".button").css({
-               'width':'200px'
-            });
-        }
 var bod = $(document);
 var container = $("#menu_container");
 var main = $("#drop_down");
@@ -30,12 +25,7 @@ var drop = $("#dropper");
 var head = $("#head");
 var text = $("#text");
 var el = drop.children();
-   function CenterGlobal(obj){
-        var pos = ($(document).width()/2) - (obj.width()/2);
-        obj.css({
-            'left': pos
-        });
-    }
+    
                 $('li').each(function(index){
                    $(this).transition({
                       y: -30
@@ -64,16 +54,19 @@ var el = drop.children();
            'background-color':'#4e4e4e',
            'line-height':'200%',
            'text-align':'center',
+           'border-radius':'2px'
        });
         main.css({
            'position':'relative',
-           'background-color':'cornflowerblue' 
+           'background-color':'cornflowerblue',
+           'width': '120px',
+           'height': '30px',
        });
        head.css({
            'z-index':'1',
            'position':'relative',
-           'width': main.width(),
-           'height': main.height(),
+           'width': '120px',
+           'height': '30px',
            'line-height':'200%',
            'text-align':'center',
        });
@@ -85,23 +78,33 @@ var el = drop.children();
            'color':'white'
        });
    })();
+    function AlignHorizontal(target, obj){
+        var width = target.width();
+        var myWidth = obj.width();
+        var posX = (width/2) - myWidth/2;
+        obj.css({
+           'left': posX
+        });
+    }
     (function ButtonAnimation(){
-         $(head).mouseenter(
-            function(){
+        $(main).hover(
+        function(){
                 $('li').each(function(index){
                    $(this).transition({
                       y: 30 * index
                    });
+                    
                 });
                 $(this).css({
-                   'background-color' : 'darkgray' 
+                   'background-color' : 'darkgray'  
                 });
-            });
-        $(head).mouseleave(function(){
-            $(this).css({
+        },
+        function(){
+              $(this).css({
                    'background-color' : 'cornflowerblue' 
                 });
-        });
+            }
+        );
         $(container).mouseleave(function(){
             $('li').each(function(index){
                    $(this).transition({
@@ -121,23 +124,20 @@ var el = drop.children();
             $(el[i]).hover(
             function(){
                 $(this).css({
-                   'opacity':'0.5' 
+                   'background-color':'lightgray' 
                 });
             },
             function(){
                 $(this).css({
-                   'opacity':'1' 
+                   'background-color':'#4e4e4e' 
                 });
             });
         }
     })();
-        
-});
-$(window).resize(function(){
-       if(window.screen.width < 768){
-            $(".button").css({
-               'width':'200px'
-            });
-        }
-        CenterGlobal($("#menu_container"));
+    
+     AlignHorizontal(bod, container);
+    
+    $(window).resize(function(){
+    AlignHorizontal(bod, container);
+    });
 });
