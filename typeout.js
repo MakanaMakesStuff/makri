@@ -13,7 +13,13 @@
 ##                                                                                 ##
 ## Copyright @ Makanaokeakua Edwards. This code can be used for any purpose.       ##
 ## (If used in commercial projects, do not use in its original unaltered form).    ##
-##  All implementations of this code should cite myself as the original writer.    ##         ##                                                                                 ##
+##  All implementations of this code should cite myself as the original writer.    ##
+##                                                                                 ##
+##  How to use: simply name your classes as such 'type-500' (the word 'type'       ##
+##  followed by a hyphen and a number). That number represents the type speed in   ##
+##  milliseconds. Any innerHTML within this specified class will be manipulated by  ##
+##  the plugin                                                                     ##
+##                                                                                 ##
 #####################################################################################
 #####################################################################################
 */
