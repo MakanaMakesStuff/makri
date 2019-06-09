@@ -36,7 +36,8 @@ function Typer(delay){
 
 Typer.prototype.typeout = (initObj, delay)=>{
     for(var i = 0; i < initObj.length; i++){
-        var right = initObj[i].className.split("-")[1];
+        let name = [...initObj[i].classList];
+        let right; name.map((v)=>{ if(v.indexOf('type-') > -1){ return right = v.split("-")[1]; } });
         if(/^(?=.*[a-zA-Z])(?=.*[0-9])/.test(right) || !/^[0-9]/.test(right)){
             //Ignore and Let Loop Continue
         }
@@ -46,7 +47,8 @@ Typer.prototype.typeout = (initObj, delay)=>{
     }
     
     function init (obj){
-        delay = parseInt(obj.className.split("-")[1]) || 1000;
+        let name = [...obj.classList];
+        name.map((v)=>{ if(v.indexOf('type-') > -1){ return delay = v.split("-")[1] || 1000; }});
         var letters = obj.innerHTML;
         obj.innerHTML = "";
         var temp = "";
