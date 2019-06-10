@@ -17,8 +17,14 @@
 ##                                                                                 ##
 ##  How to use: simply name your classes as such 'type-500' (the word 'type'       ##
 ##  followed by a hyphen and a number). That number represents the type speed in   ##
-##  milliseconds. Any innerHTML within this specified class will be manipulated by  ##
-##  the plugin                                                                     ##
+##  milliseconds. Any innerHTML within this specified class will be manipulated by ##
+##  the plugin. You can also call the Typer function and bind the action to an     ##
+##  element or event.                                                              ##
+##                                                                                 ##
+##  For example:                                                                   ##         
+##       Typer('.insertclass').One(150);                                           ##
+##                                                                                 ##
+##                                                                                 ##
 ##                                                                                 ##
 #####################################################################################
 #####################################################################################
