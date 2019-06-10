@@ -23,53 +23,63 @@
 #####################################################################################
 #####################################################################################
 */
-function Typer(delay){
-    var types = document.querySelectorAll("[class*='type']");
-    if(this instanceof Typer){
-        var all = [...types];
-        this.typeout(all, delay);
-    }
-    else{
-        return new Typer(delay);
-    }
+function Typer(obj){
+    if(obj != null){ this.obj = document.querySelectorAll(obj); }
+    if(this instanceof Typer){ /* ignore */ }
+    else{ return new Typer(obj); }
 }
-
-Typer.prototype.typeout = (initObj, delay)=>{
-    for(var i = 0; i < initObj.length; i++){
-        let name = [...initObj[i].classList];
-        let right; name.map((v)=>{ if(v.indexOf('type-') > -1){ return right = v.split("-")[1]; } });
-        if(/^(?=.*[a-zA-Z])(?=.*[0-9])/.test(right) || !/^[0-9]/.test(right)){
-            //Ignore and Let Loop Continue
+Typer.prototype.One = (delay)=>{
+    let temp;
+    if(this.obj == 0 || this.obj == undefined){ return 0; }
+    else{
+        if(this.obj.length > 0){
+            temp = [...this.obj];
+            temp.map((v, i)=>{
+                let letters;    
+                letters = v.innerHTML;
+                temp[i].innerHTML = "";
+                process(v, letters, delay, 0, "");
+            });
         }
         else{
-            init(initObj[i]);
+            temp = this.obj;
+            let letters;
+            letters = temp.innerHTML;
+            process(temp, letters, delay, 0, "");
         }
     }
-    
-    function init (obj){
-        let name = [...obj.classList];
-        name.map((v)=>{ if(v.indexOf('type-') > -1){ return delay = v.split("-")[1] || 1000; }});
-        var letters = obj.innerHTML;
-        obj.innerHTML = "";
-        var temp = "";
-        process(obj, letters, temp, 0, delay);
-    }
-    
-    function process (obj, letters, temp, count, delay){
+    function process(obj, letters, delay, count, temp){
         if(count < letters.length){
             temp += letters[count];
             obj.innerHTML = temp;
             count++;
-            setTimeout(function(){
-                return process(obj, letters, temp, count, delay);
+            return setTimeout(()=>{
+                process(obj, letters, delay, count, temp);
             }, delay);
-        }
-        else{
-            return;
         }
     }
 }
+Typer.prototype.set = (delay)=>{
+    let obj = document.querySelectorAll("[class*='type-']");
+    obj = [...obj];
+    obj.map((v)=>{if(v.className.indexOf('type-') > -1){
+        let letters;
+        letters = v.innerHTML;
+        v.innerHTML = "";
+        process(v, letters, delay, 0, "");
+    }});
 
-window.onload = ()=>{
-    var typer = new Typer();
+    function process(obj, letters, delay, count, temp){
+        let name = [...obj.classList];
+        name.map((v)=>{if(v.indexOf('type-') > -1){return delay = v.split("-")[1] || 150 }});
+        if(count < letters.length){
+            temp += letters[count];
+            obj.innerHTML = temp;
+            count++;
+            return setTimeout(()=>{
+                process(obj, letters, delay, count, temp);
+            }, delay);
+        }
+    }
 }
+window.onload = ()=>{ Typer().set(); }
