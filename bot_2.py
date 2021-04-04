@@ -25,7 +25,7 @@ class Bot():
         tags = tag.split()
         ## END ##
         
-        ## SET LIMIT ##
+        ### SET LIMIT ###
         print("How many people should we engage with?(per hashtag)")
         limit = input()
         limit = int(limit)
