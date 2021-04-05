@@ -88,4 +88,5 @@ Typer.prototype.set = (delay)=>{
         }
     }
 }
-window.onload = ()=>{ Typer().set(); }
+window.onload = ()=>{ Typer().set(); 
+}
