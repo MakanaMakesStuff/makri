@@ -1,7 +1,7 @@
 /* 
 # CODER: MAKA EDWARDS #
 # VERSION: 1.0 #
-# INCLUDE THIS IN YOUR HTML FILE:
+# INCLUDE THIS AT THE START OF YOUR HTML FILE:
         <div id="menu_container">
             <div id="drop_down" class="dropper">
                 <div id="head"><p id="text"><!-- INSERT MENU HEADER !-->LANDMARKS</p></div>
